@@ -91,10 +91,12 @@ class ActionGroup extends React.Component {
 
       let iconElement = undefined;
 
-      if (icons && typeof icons[i] === 'string') {
-        iconElement = <Image source={icons[i]} style={styles.icon} />;
-      } else {
-        iconElement = icons[i];
+      if (icons && icons[i]) {
+        if (typeof icons[i] === 'string') {
+          iconElement = <Image source={icons[i]} style={styles.icon} />;
+        } else {
+          iconElement = icons[i];
+        }
       }
 
       optionViews.push(
